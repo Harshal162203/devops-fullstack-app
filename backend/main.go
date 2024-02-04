@@ -6,12 +6,13 @@ import (
 	"employees/routes"
 	"employees/service"
 	"fmt"
+	"log"
+	"os"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
-	"log"
-	"os"
 )
 
 func main() {
@@ -47,10 +48,10 @@ func initializeDatabaseConnection() *gorm.DB {
 
 func createDsn() string {
 	dsnFormat := "host=%s user=%s password=%s dbname=%s port=%s sslmode=disable"
-	dbHost := os.Getenv("DB_HOST")
-	dbUser := os.Getenv("DB_USER")
-	dbPassword := os.Getenv("DB_PASSWORD")
-	dbName := os.Getenv("DB_NAME")
-	dbPort := os.Getenv("DB_PORT")
+	dbHost := os.Getenv("localhost")
+	dbUser := os.Getenv("root")
+	dbPassword := os.Getenv("redhat")
+	dbName := os.Getenv("mydatabase")
+	dbPort := os.Getenv("8080")
 	return fmt.Sprintf(dsnFormat, dbHost, dbUser, dbPassword, dbName, dbPort)
 }
