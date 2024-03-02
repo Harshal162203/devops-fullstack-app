@@ -52,6 +52,6 @@ func createDsn() string {
 	dbUser := os.Getenv("postgres")
 	dbPassword := os.Getenv("Redhat123")
 	dbName := os.Getenv("dbname")
-	dbPort := os.Getenv("8080")
+	dbPort := os.Getenv("5432")
 	return fmt.Sprintf(dsnFormat, dbHost, dbUser, dbPassword, dbName, dbPort)
 }
