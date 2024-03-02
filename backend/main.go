@@ -48,10 +48,10 @@ func initializeDatabaseConnection() *gorm.DB {
 
 func createDsn() string {
 	dsnFormat := "host=%s user=%s password=%s dbname=%s port=%s sslmode=disable"
-	dbHost := os.Getenv("localhost")
-	dbUser := os.Getenv("root")
-	dbPassword := os.Getenv("redhat")
-	dbName := os.Getenv("mydatabase")
+	dbHost := os.Getenv("my-db.cj4cw26kqkci.eu-west-3.rds.amazonaws.com")
+	dbUser := os.Getenv("postgres")
+	dbPassword := os.Getenv("Redhat123")
+	dbName := os.Getenv("dbname")
 	dbPort := os.Getenv("8080")
 	return fmt.Sprintf(dsnFormat, dbHost, dbUser, dbPassword, dbName, dbPort)
 }
